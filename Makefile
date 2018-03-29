@@ -12,11 +12,11 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS :=  
 LIB := -L./bin/lib -L/usr/local/lib -licompress -lopenjpeg
 INC := -I./bin/include
+SUBDIRS := openjpeg
 
-all: openjpeg lib $(TARGET) decoder
+all: jpeg lib $(TARGET) decoder
 
-openjpeg:
-	make -C openjpeg
+jpeg:
 	make -C openjpeg install
 
 $(TARGET): compress.c
@@ -39,5 +39,6 @@ decoder: decompress.c
 
 clean:
 	$(RM) -r $(BUILDDIR) $(SHAREDINC) $(BINDIR)/libicompress.so $(BINDIR)/libicompress.a  test *.o
+	make -C openjpeg clean
 	
 .PHONY: clean
