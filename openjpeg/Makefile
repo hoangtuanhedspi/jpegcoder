@@ -27,7 +27,7 @@ CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
 TARGET  = openjpeg
 STATICLIB = lib$(TARGET).a
 SHAREDLIB = lib$(TARGET).so
-LIBNAME = lib$(TARGET).so
+LIBNAME = lib$(TARGET).so.$(VER_MAJOR)
 
 
 

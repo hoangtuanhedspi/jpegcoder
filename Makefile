@@ -10,7 +10,7 @@ SRCEXT := c
 SOURCES := $(shell find $(SRCDIR) -type f -name '*.$(SRCEXT)')
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS :=  
-LIB := -L./bin/lib -L/usr/local/lib -licompress -lopenjpeg
+LIB := -L./bin/lib -lopenjpeg -licompress
 INC := -I./bin/include
 SUBDIRS := openjpeg
 
