@@ -2,4 +2,3 @@
 *.a
 *.so
 build/
-bin/

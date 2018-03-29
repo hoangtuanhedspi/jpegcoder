@@ -38,7 +38,7 @@ decoder: decompress.c
 	$(CC) $^ -o decoder $(LIB) $(INC)
 
 clean:
-	$(RM) -r $(BUILDDIR) $(SHAREDINC) $(BINDIR)/libicompress.so $(BINDIR)/libicompress.a  test *.o
+	$(RM) -r $(BUILDDIR) $(SHAREDINC) $(BINDIR) coder decoder  test *.o
 	make -C openjpeg clean
 	
 .PHONY: clean
